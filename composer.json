@@ -59,10 +59,10 @@
 
     "minimum-stability": "dev",
     "prefer-stable": true,
-	"repositories": [
-		{
-			"url": "https://github.com/hungnm1518/support.git",
-			"type": "git"
-		}
-	]
+    "repositories": [
+        {
+            "url": "https://github.com/hungnm1518/support.git",
+            "type": "git"
+        }
+    ]
 }
