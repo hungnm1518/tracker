@@ -31,7 +31,7 @@ class Session extends Repository
         list($model, $cacheKey) = $this->cache->findCached($uuid, 'uuid', app()->make('tracker.config')->get('session_model'));
 
         if (!$model) {
-            $model = $this->newQuery()->where('uuid', $uuid)->with($this->relations)->first();
+            $model = $this->newQuery()->where('uuid', $uuid)->first();
 
             $this->cache->cachePut($cacheKey, $model);
         }
