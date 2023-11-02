@@ -281,7 +281,7 @@ class ServiceProvider extends PragmaRXServiceProvider
                 new Session(
                     $sessionModel,
                     $app['tracker.config'],
-                    new PhpSession()
+                    $app['session.store']
                 ),
                 $logRepository,
                 new Path($pathModel),
