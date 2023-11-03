@@ -22,7 +22,7 @@ class FixAgentName extends Migration
             $this->builder->table(
                 $this->table,
                 function ($table) {
-                    $table->dropUnique('tracker_agents_name_unique');
+                    $table->dropUnique(['name']);
                 }
             );
 

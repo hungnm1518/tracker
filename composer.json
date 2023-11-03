@@ -1,5 +1,5 @@
 {
-    "name": "vinkev/tracker",
+    "name": "hungnm1518/tracker",
 
     "description": "fork with fix to package",
 
@@ -19,7 +19,7 @@
         "php": ">=8.0",
         "doctrine/dbal": "^3.0",
         "laravel/framework": "^10.0",
-        "pragmarx/support": "dev-master",
+        "pragmarx/support": "^0.9.5",
         "ramsey/uuid": "^3 || ^4",
         "jenssegers/agent": "~2.1",
         "ua-parser/uap-php" : "~3.4",
@@ -45,7 +45,7 @@
 
     "extra": {
         "branch-alias": {
-            "dev-master": "2.1.x-dev"
+            "dev-master": "dev-master"
         },
         "laravel": {
             "providers": [
@@ -58,11 +58,5 @@
     },
 
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "url": "https://github.com/hungnm1518/support.git",
-            "type": "git"
-        }
-    ]
+    "prefer-stable": true
 }
