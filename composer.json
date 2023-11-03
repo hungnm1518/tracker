@@ -12,7 +12,12 @@
             "name": "Antonio Carlos Ribeiro",
             "email": "acr@antoniocarlosribeiro.com",
             "role": "Creator & Designer"
-        }
+        },
+		{
+            "name": "Hung Nguyen",
+            "email": "hungnm144@gmail.com",
+            "role": "Dev"
+        },
     ],
 
     "require": {
@@ -45,7 +50,7 @@
 
     "extra": {
         "branch-alias": {
-            "dev-master": "dev-master"
+            "dev-master": "2.1.x-dev"
         },
         "laravel": {
             "providers": [
