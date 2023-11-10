@@ -56,7 +56,7 @@ class Session extends Base
 
     public function log()
     {
-        return $this->hasMany($this->getConfig()->get('log_model'), 'id');
+        return $this->hasMany($this->getConfig()->get('log_model'), 'log_id');
     }
 
     public function getPageViewsAttribute()
