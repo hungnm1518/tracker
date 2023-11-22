@@ -132,6 +132,12 @@ return [
     'geoip_database_path' => __DIR__.'/geoip', //storage_path('geoip'),
 
     /*
+     * Maxmind license for update database.
+     */
+
+    'geoip_database_license' => env('TRACKER_GEOIP_LICENSE'),
+
+    /*
      * Also log SQL query bindings?
      *
      * Log must be enabled for this option to work.

@@ -560,7 +560,7 @@ class Tracker
     {
         $updater = new GeoIpUpdater();
 
-        $success = $updater->updateGeoIpFiles($this->config->get('geoip_database_path'));
+        $success = $updater->updateGeoIpFiles($this->config->get('geoip_database_path'), null, null, $this->config->get('geoip_database_license'));
 
         $this->messageRepository->addMessage($updater->getMessages());
 
