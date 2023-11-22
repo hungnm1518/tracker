@@ -24,7 +24,7 @@
         "php": ">=8.0",
         "doctrine/dbal": "^3.0",
         "laravel/framework": "^10.0",
-        "pragmarx/support": "^0.9.5",
+        "hungnm1518/support": "^1.0",
         "ramsey/uuid": "^3 || ^4",
         "jenssegers/agent": "~2.1",
         "ua-parser/uap-php" : "~3.4",
