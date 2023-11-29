@@ -499,7 +499,7 @@ class Tracker
 
     public function onlineUsers($minutes = 3, $results = true)
     {
-        return $this->sessions(3);
+        return $this->sessions($minutes, $results);
     }
 
     public function track()
