@@ -110,27 +110,34 @@ abstract class Repository implements RepositoryInterface
 
     /**
      * @param string[] $keys
+     *
+     * @throws \Exception
      */
     public function findOrCreate($attributes, $keys = null, &$created = false, $otherModel = null)
     {
         [$model, $cacheKey] = $this->cache->findCached($attributes, $keys, $this->className);
 
         if (!$model) {
-            $model = $this->newQuery($otherModel);
+            // Retry in event there's a duplicate race condition
+            $model = retry(2, function() use ($otherModel, $attributes, $keys, $cacheKey, &$created) {
+                $model = $this->newQuery($otherModel);
 
-            $keys = $keys ?: array_keys($attributes);
+                $keys = $keys ?: array_keys($attributes);
 
-            foreach ($keys as $key) {
-                $model = $model->where($key, $attributes[$key]);
-            }
+                foreach ($keys as $key) {
+                    $model = $model->where($key, $attributes[$key]);
+                }
 
-            if (!$model = $model->first()) {
-                $model = $this->create($attributes, $otherModel);
+                if (!$model = $model->first()) {
+                    $model = $this->create($attributes, $otherModel);
 
-                $created = true;
-            }
+                    $created = true;
+                }
 
-            $this->cache->cachePut($cacheKey, $model);
+                $this->cache->cachePut($cacheKey, $model);
+
+                return $model;
+            }, 20);
         }
 
         $this->model = $model;
