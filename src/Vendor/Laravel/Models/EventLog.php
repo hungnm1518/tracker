@@ -11,4 +11,14 @@ class EventLog extends Base
         'class_id',
         'log_id',
     ];
+
+    public function event()
+    {
+        return $this->belongsTo($this->getConfig()->get('event_model'));
+    }
+
+    public function log()
+    {
+        return $this->belongsTo($this->getConfig()->get('log_model'));
+    }
 }
